@@ -4,7 +4,23 @@ class Vendor
 
   def initialize(name)
     @name = name
-    @inventory = # you decide what goes here...
+    @inventory = {}
   end
 
+  def check_stock(item)
+    if @inventory[item] == nil
+      @inventory[item] = 0
+    else
+      return @inventory[item]
+    end
+  end
+
+  def stock(item, quantity)
+    if @inventory[item] == nil
+      @inventory[item] = quantity
+    else
+      @inventory[item] += quantity
+    end
+  end
+  
 end
